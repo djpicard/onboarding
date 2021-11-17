@@ -40,7 +40,7 @@ resource "spacelift_policy_attachment" "plan" {
   stack_id  = data.spacelift_current_stack.this.id
 }
 
-resource "spacelift_policy_attachment" "plan" {
+resource "spacelift_policy_attachment" "plan_poc" {
   policy_id = spacelift_policy.plan.id
   stack_id  = data.spacelift_current_stack.poc.id
 }
@@ -68,7 +68,7 @@ resource "spacelift_policy_attachment" "push" {
   stack_id  = data.spacelift_current_stack.this.id
 }
 
-resource "spacelift_policy_attachment" "push" {
+resource "spacelift_policy_attachment" "push_poc" {
   policy_id = spacelift_policy.push.id
   stack_id  = data.spacelift_current_stack.poc.id
 }
@@ -93,7 +93,7 @@ resource "spacelift_policy_attachment" "task" {
   stack_id  = data.spacelift_current_stack.this.id
 }
 
-resource "spacelift_policy_attachment" "task" {
+resource "spacelift_policy_attachment" "task_poc" {
   policy_id = spacelift_policy.task.id
   stack_id  = data.spacelift_current_stack.poc.id
 }
