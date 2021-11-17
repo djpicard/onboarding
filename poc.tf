@@ -1,4 +1,4 @@
-data "spacelift_current_stack" "poc" {
-    id = "website-poc"
+data "spacelift_stack" "poc" {
+    stack_id = "website-poc"
 }
 

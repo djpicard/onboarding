@@ -42,7 +42,7 @@ resource "spacelift_policy_attachment" "plan" {
 
 resource "spacelift_policy_attachment" "plan_poc" {
   policy_id = spacelift_policy.plan.id
-  stack_id  = data.spacelift_current_stack.poc.id
+  stack_id  = data.spacelift_stack.poc.id
 }
 
 # PUSH POLICY
@@ -70,7 +70,7 @@ resource "spacelift_policy_attachment" "push" {
 
 resource "spacelift_policy_attachment" "push_poc" {
   policy_id = spacelift_policy.push.id
-  stack_id  = data.spacelift_current_stack.poc.id
+  stack_id  = data.spacelift_stack.poc.id
 }
 
 # TASK POLICY
@@ -95,7 +95,7 @@ resource "spacelift_policy_attachment" "task" {
 
 resource "spacelift_policy_attachment" "task_poc" {
   policy_id = spacelift_policy.task.id
-  stack_id  = data.spacelift_current_stack.poc.id
+  stack_id  = data.spacelift_stack.poc.id
 }
 
 # LOGIN POLICY
