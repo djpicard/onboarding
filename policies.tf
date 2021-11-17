@@ -40,6 +40,11 @@ resource "spacelift_policy_attachment" "plan" {
   stack_id  = data.spacelift_current_stack.this.id
 }
 
+resource "spacelift_policy_attachment" "plan" {
+  policy_id = spacelift_policy.plan.id
+  stack_id  = data.spacelift_current_stack.poc.id
+}
+
 # PUSH POLICY
 #
 # This example Git push policy ignores all changes that are outside a project's
@@ -63,6 +68,11 @@ resource "spacelift_policy_attachment" "push" {
   stack_id  = data.spacelift_current_stack.this.id
 }
 
+resource "spacelift_policy_attachment" "push" {
+  policy_id = spacelift_policy.push.id
+  stack_id  = data.spacelift_current_stack.poc.id
+}
+
 # TASK POLICY
 #
 # This task policy only allows you to exectute a few selected commands.
@@ -81,6 +91,11 @@ resource "spacelift_policy" "task" {
 resource "spacelift_policy_attachment" "task" {
   policy_id = spacelift_policy.task.id
   stack_id  = data.spacelift_current_stack.this.id
+}
+
+resource "spacelift_policy_attachment" "task" {
+  policy_id = spacelift_policy.task.id
+  stack_id  = data.spacelift_current_stack.poc.id
 }
 
 # LOGIN POLICY
